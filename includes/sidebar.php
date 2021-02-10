@@ -68,8 +68,10 @@
             $ad = $row['ad_image'];
         }?>
     <img src="./ads/<?php echo $ad; ?>" alt="" style="width: 100%; padding-bottom:20px;" > 
+    <h4>Got an Ad to display? <a href="./about.php">Click Here</a></h4>
     
 
+    
 
     
 
