@@ -22,7 +22,7 @@
                 <!-- First Blog Post -->
 
                 <?php { 
-                    $page_limit = 5; //  P  A  G  E  I  N  G
+                    $page_limit = 5; //  P  A  G  I  N  G
                     if (isset($_GET['page'])) { 
                         $page = $_GET['page'];
                     } else {
@@ -48,14 +48,16 @@
                         $post_date = $row['post_date'];
                         $post_image = $row['post_image'];
                         $post_content = $row['post_content'];
+                        $post_category = $row['post_category'];
 
 
                 ?>
                         <h2 class="title">
                             <a class="title-links" href="post.php?post_id=<?php echo $post_id;  ?> "><?php echo $post_title;  ?></a>
                         </h2>
-
+                        <p><strong style="color: rebeccapurple;"><?php echo $post_category;  ?></strong></p>
                         <p><span class=glyphicon glyphicon-time></span> Posted on <?php echo $post_date;  ?></p>
+                        
 
                         <img class="img-responsive" src="./images/<?php echo $post_image;  ?>">
                         <br>

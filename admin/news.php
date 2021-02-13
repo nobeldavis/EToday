@@ -63,21 +63,27 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <h4>Add Title</h4>
+                                    <h4>Edit Title</h4>
                                     <input class="form-control" value="<?php if (isset($post_title)) {
                                         echo $post_title;
                                     }  ?>"  type="text" name="post_title" placeholder="Enter News Title">
                                 </div>
 
                                 <div class="form-group">
-                                    <h4>Add Category</h4>
-                                        <input class="form-control" value="<?php if (isset($post_category)) {
-                                            echo $post_category;
-                                        }  ?>"  name="post_category" type="text"  placeholder="Enter Category">
+                                    <h4>Edit Category</h4>
+                                    <select name="post_category">
+                                    <?php  $sql = "SELECT * from categories";
+                                        $all_categories = mysqli_query($conn, $sql); 
+                                        while ($row = mysqli_fetch_assoc($all_categories)) {
+                                            
+                                            echo "<option>$row[cat_title]</option>";
+                                        } 
+                                    ?>  
+                                    </select> 
                                 </div>
 
                                 <div class="form-group">
-                                    <h4>Add Content</h4>
+                                    <h4>Edit Content</h4>
                                     <textarea class="form-control"  rows="10" type="text" name="post_content" placeholder="Enter News Content"><?php if (isset($post_content)) {
                                         echo $post_content;
                                     }  ?></textarea>
@@ -90,7 +96,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <h4>Add Tags</h4>
+                                    <h4>Edit Tags</h4>
                                     <input class="form-control" value="<?php if (isset($post_tags)) {
                                         echo $post_tags;
                                     }  ?>" type="text" name="post_tags" placeholder="Enter Related Tags">

@@ -3,7 +3,7 @@
 <!-- H  E  A  D  E  R -->
 <?php include "includes/header.php";  ?>
 
-<body>
+<body style="padding-top: 80px;">
     <!-- N  A  V  B  A  R -->
     <?php include "includes/navigation.php";  ?>
 
@@ -32,6 +32,7 @@
                             $post_date = $row['post_date'];
                             $post_image = $row['post_image'];
                             $post_content = $row['post_content'];
+                            $post_category = $row['post_category'];
                         }
                         $count = mysqli_num_rows($posts_query);
                         if ($count == 0) {
@@ -45,12 +46,13 @@
                             $post_date = $row['post_date'];
                             $post_image = $row['post_image'];
                             $post_content = $row['post_content'];
+                            $post_category = $row['post_category'];
 
                 ?>
-                            <h2>
-                                <a href="post.php?post_id=<?php echo $post_id;  ?> "><?php echo $post_title;  ?></a>
+                            <h2 class="title">
+                                <a class="title-links" href="post.php?post_id=<?php echo $post_id;  ?> "><?php echo $post_title;  ?></a>
                             </h2>
-
+                            <p><strong style="color: rebeccapurple;"><?php echo $post_category;  ?></strong></p>
                             <p><span class=glyphicon glyphicon-time></span> Posted on <?php echo $post_date;  ?></p>
 
                             <img class="img-responsive" src="./images/<?php echo $post_image;  ?>">
