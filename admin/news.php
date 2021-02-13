@@ -154,7 +154,7 @@
                                     </tr>
                                 </thead>
                                 <?php
-                                $sql = "SELECT * from posts";
+                                $sql = "SELECT * from posts ORDER BY post_date DESC";
                                 $all_news = mysqli_query($conn, $sql);
                                 while ($row = mysqli_fetch_assoc($all_news)) {
                                     $post_id = $row['post_id'];
