@@ -1,4 +1,5 @@
-<-- HEADER -->
+
+<!-- HEADER -->
 
     <?php include './includes/header.php';  ?>
 
@@ -84,7 +85,8 @@
 
                                 <div class="form-group">
                                     <h4>Edit Content</h4>
-                                    <textarea class="form-control"  rows="10" type="text" name="post_content" placeholder="Enter News Content"><?php if (isset($post_content)) {
+                                    <textarea  name="post_content">
+                                    <?php if (isset($post_content)) {
                                         echo $post_content;
                                     }  ?></textarea>
                                 </div>
@@ -136,10 +138,14 @@
                         }
 
                         /* $sql = "UPDATE  `posts` SET  'post_title` = '$post_title' WHERE `posts`.`post_id` =$post_id; "; */
-
+                        if ($post_title == "" || $post_content == ""){
+                            echo '<script>alert("Title and Content is must")</script>';
+                        }
+                        else{
                         $sql2 = "UPDATE `posts` SET `post_category` = '$post_category', `post_title` = '$post_title', `post_image` = '$post_image', `post_content` = '$post_content', `post_tags` = '$post_tags'  WHERE `posts`.`post_id` = '$post_id'; ";
 
                         $update_news = mysqli_query($conn, $sql2);
+                        }
                     }
                     ?>
                     </form><hr>
@@ -204,7 +210,9 @@
 
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
-
+        <!-- TinyMCE -->
+        <script src="../js/tinymce/tinymce.min.js"></script>
+        <script src="../js/tinymce/init-tinymce.js"></script>
     </body>
-
+ 
     </html>

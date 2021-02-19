@@ -1,3 +1,4 @@
+
 <!--  HEADER  -->
 <?php include './includes/header.php';  ?>
 
@@ -41,7 +42,7 @@
                                                                    
                                 <div class="form-group">
                                     <h4>Add Content</h4>
-                                    <textarea class="form-control" rows="10" type="text" name="post_content" placeholder="Enter News Content"></textarea>
+                                    <textarea  name="post_content"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <h4>Add Image</h4>
@@ -61,10 +62,15 @@
         $post_content = $_POST['post_content'];
         $post_category = $_POST['post_category'];
         $post_tags = $_POST['post_tags'];
-        
+          
         $post_image = $_FILES['post_image']['name'];
         $post_image_temp = $_FILES['post_image']['tmp_name'];
         move_uploaded_file($post_image_temp, "../images/$post_image");
+
+        if ($post_title == "" || $post_content == ""){
+            echo '<script>alert("Title and Content is must")</script>';
+        }
+        else{
         
         $sql = "INSERT INTO `posts` (`post_id`, `post_category`, `post_title`, `post_date`, `post_image`, `post_content`, `post_tags`) VALUES (NULL, '$post_category', '$post_title', current_timestamp(), '$post_image', '$post_content', '$post_tags')";
 
@@ -73,6 +79,7 @@
             die('Failed' . mysqli_error($create_cat_query));
         }
         header("location:news.php");
+        }
     }
     ?>
 
@@ -101,6 +108,10 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- tinyMCE -->
+    <script src="../js/tinymce/tinymce.min.js"></script>
+    <script src="../js/tinymce/init-tinymce.js"></script>
 
 </body>
 

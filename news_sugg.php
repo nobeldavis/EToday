@@ -41,7 +41,7 @@
                                                                    
                                 <div class="form-group">
                                     <h4>Add Content</h4>
-                                    <textarea class="form-control" rows="10" type="text" name="post_content" placeholder="Enter News Content"></textarea>
+                                    <textarea name="post_content"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <h4>Add Image</h4>
@@ -68,12 +68,18 @@ if (isset($_POST['submit'])) {
    // $post_date = date(('d-m-y'));
     
    move_uploaded_file($post_image_temp, "./images2/$post_image");
-    
-    $sql = "INSERT INTO `news_sugg` (`post_id2`, `post_category2`, `post_title2`, `post_date2`, `post_image2`, `post_content2`, `post_tags2`) VALUES (NULL, '$post_category2', '$post_title2', current_timestamp(), '$post_image', '$post_content2', '$post_tags2')";
 
-    $add_news = mysqli_query($conn, $sql);
-    if (!$add_news) {
-        die('Failed' . mysqli_error($create_cat_query));
+   if ($post_title2 == "" || $post_content2 == ""){
+    echo '<script>alert("Title and Content is must")</script>';
+    }
+    else{
+    
+     $sql = "INSERT INTO `news_sugg` (`post_id2`, `post_category2`, `post_title2`, `post_date2`, `post_image2`, `post_content2`, `post_tags2`) VALUES (NULL, '$post_category2', '$post_title2', current_timestamp(), '$post_image', '$post_content2', '$post_tags2')";
+
+        $add_news = mysqli_query($conn, $sql);
+        if (!$add_news) {
+            die('Failed' . mysqli_error($create_cat_query));
+        }
     }
 }  ?>
 
@@ -101,6 +107,9 @@ if (isset($_POST['submit'])) {
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- tinyMCE -->
+    <script src="./js/tinymce/tinymce.min.js"></script>
+    <script src="./js/tinymce/init-tinymce.js"></script>
 
 </body>
 <html>

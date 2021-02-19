@@ -117,7 +117,7 @@
                           $check_image = mysqli_query($conn,$sql);
                            
                           while($row = mysqli_fetch_array($check_image)){
-                              $post_image = $row['post_image2'];
+                            $post_image = $row['post_image2'];
 
                             $oldname = "../images2/$post_image";
                             $newname = "../images/$post_image";

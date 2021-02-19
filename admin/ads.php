@@ -21,7 +21,7 @@
                             <small>Advertisements</small>
                         </h1>
                         <div class="col-lg-6 col-xs-12" >
-                            <?php if(!isset($_SESSION['ad_exist'])){?>
+                            
                             <form action="ads.php" method="post" enctype="multipart/form-data"> 
                                 <div class="form-group">
                                     <h4>Add Advertisement Image</h4>
@@ -33,8 +33,6 @@
                                 </div>
                                 </form>
                                 <?php 
-                            }  
-
                             
                             if (isset($_POST['submit'])) {        
                                 $ad = $_FILES['ad']['name'];
@@ -50,7 +48,7 @@
                                 if (!$add_ad) {
                                     die('Failed' . mysqli_error($add_ad));
                                 } 
-                                $_SESSION['ad_exist'] = 'ad_exist';
+                                
                                 header("location:ads.php");
 
                                 }
@@ -77,7 +75,7 @@
                                     $the_ad_id = $_GET['delete'];
                                     $sql3 = "DELETE from ads where ad_id = '$the_ad_id'";
                                     $delete_ad_query = mysqli_query($conn, $sql3);
-                                    unset($_SESSION['ad_exist']);
+                                    
                                     header("location:ads.php");
                                 } 
                             ?> 

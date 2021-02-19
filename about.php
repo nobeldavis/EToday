@@ -14,7 +14,7 @@
         <h4 style="color: white;font-size: 25px;padding-bottom:70px;">We are an Online E News Website managed by both our readers and the admins</h4>
 
         <h1  style="color: white;font-weight: 700;font-size: 60px;">Contact us</h1>
-        <h4 style="color: white;font-size: 25px;padding-bottom:40px;">Got any doubts..?   Have an Ad to display? <p> Contact our admins via e-mail or by Phone:</p></h4>
+        <h4 style="color: white;font-size: 25px;padding-bottom:40px;">Got any doubts..?   Have an <strong style="color: yellow;"> ad to display?</strong> <p> Contact our admins via e-mail or by Phone:</p></h4>
         <h4 style="color: white;font-size: 25px;">nobeldavis@gmail.com <br><br> amalpshaji@gmail.com <br><br>+91 1234567890</h4>
     </div>
     </div>

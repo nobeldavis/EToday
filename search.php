@@ -43,6 +43,7 @@
                         while ($row = mysqli_fetch_assoc($posts_query)) {
                             $post_id =$row['post_id'];
                             $post_title = $row['post_title'];
+                            $post_category = $row['post_category'];
                             $post_date = $row['post_date'];
                             $post_image = $row['post_image'];
                             $post_content = $row['post_content'];
@@ -51,17 +52,19 @@
                 ?>
                 
         
-                <h2>
-                    <a href="post.php?post_id=<?php echo $post_id;  ?> "><?php echo $post_title;  ?></a>
-                </h2>
-            
-                <p><span class=glyphicon glyphicon-time></span> Posted on <?php echo $post_date;  ?></p>
-                
-                <img class="img-responsive" src="./images/<?php echo $post_image;  ?>" alt="">
-                <p><?php echo $post_content;  ?></p>
-                <a class='btn btn-primary' href=>Read More <span class='glyphicon glyphicon-chevron-right'></span></a>
+                <h2 class="title">
+                            <a class="title-links" href="post.php?post_id=<?php echo $post_id;  ?> "><?php echo $post_title;  ?></a>
+                        </h2>
+                        <p><strong style="color: rebeccapurple;"><?php echo $post_category;  ?></strong></p>
+                        <p><span class=glyphicon glyphicon-time></span> Posted on <?php echo $post_date;  ?></p>
+                        
 
-                <hr>
+                        <img class="img-responsive" src="./images/<?php echo $post_image;  ?>">
+                        <br>
+                        <p style="display: inline-block;height: 80px;overflow:hidden;" class="content" row="5"><?php echo $post_content;  ?></p>
+                        <a class='btn btn-primary' href="post.php?post_id=<?php echo $post_id;  ?> ">Read More <span class='glyphicon glyphicon-chevron-right'></span></a>
+
+                        <hr>
             <?php 
                 } 
             }
