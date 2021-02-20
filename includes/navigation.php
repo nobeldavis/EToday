@@ -42,13 +42,35 @@
                         
                             echo $_SESSION['username'];  ?></b><b class="caret"></b></a></a>
                             <ul class="dropdown-menu">
-                            <li>
+                                <li>
                                     <a href="./news_sugg.php" ><i class="fa fa-fw fa-power-off"></i>Suggest a News</a>
+                                </li>  
+                                <li>
+                                    <?php
+                                    $sql = "SELECT * from user_registration";
+                                    $users = mysqli_query($conn, $sql);
+                                    while ($row = mysqli_fetch_assoc($users)) {
+                                        $user_id = $row['user_id'];
+                                    
+                                    }?>
+
+                                    <a href="./index.php?delete_accnt=<?php echo $user_id?>">Delete Account</a>
+                                    
+                                    <?php 
+                                    if (isset($_GET['delete_accnt'])) {
+                                    $the_user_id = $_GET['delete_accnt'];
+                                    $sql = "DELETE from user_registration where user_id = '$the_user_id'";
+                                    mysqli_query($conn, $sql);
+                                    unset($_SESSION['username']);
+                                    header("location:./index.php");
+                                    } 
+                                 ?>
                                 </li>
                                 <li>
                                     <a href="./includes/logout.php" ><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                                 </li>
-                       <?php }?>
+                       <?php 
+                       }?>
                        
                         </ul>
                     </li>

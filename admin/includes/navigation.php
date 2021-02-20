@@ -140,6 +140,9 @@
             <li>
                 <a href="./ads.php"><i class="fa fa-fw fa-envelope "></i> Display Ads</a>
             </li>
+            <li>
+                <a href="./users.php"><i class="fa fa-fw fa-users "></i> Manage Users / Admins</a>
+            </li>
             <!-- <li>
                 <a href="javascript:;" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-users"></i> Users <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="users" class="collapse">

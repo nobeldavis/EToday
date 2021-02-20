@@ -61,7 +61,8 @@
 
                         <img class="img-responsive" src="./images/<?php echo $post_image;  ?>">
                         <br>
-                        <p style="display: inline-block;height: 80px;overflow:hidden;" class="content" row="5"><?php echo $post_content;  ?></p>
+                        <?php echo mb_strimwidth($post_content, 0, 900, "...");  ?>
+                        <br><br>
                         <a class='btn btn-primary' href="post.php?post_id=<?php echo $post_id;  ?> ">Read More <span class='glyphicon glyphicon-chevron-right'></span></a>
 
                         <hr>

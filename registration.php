@@ -46,6 +46,7 @@ if (isset($_POST['signup'])) {
     } else {
         $sql = "INSERT INTO `user_registration` (`user_id`, `username`, `email`, `password`) VALUES (NULL, '$username', '$email', '$password');";
         mysqli_query($conn, $sql);
+        header("location:./index.php");
     }
 }
 ?>
