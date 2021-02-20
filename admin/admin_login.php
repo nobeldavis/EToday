@@ -46,32 +46,35 @@
 ?>
 
 <!-- Admin Login -->
-            <div class="col-xs-12 col-md-6 col-lg-3 col-lg-offset-4">
-                <form action="admin_login.php" method="post">
-                    <h3 class="text-center ">Admin Login</h3>
-                    <div class="form-group">
-                        
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="text"  name="email" placeholder="Enter Email" class=" form-control form-control-lg">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password"  name="password" placeholder="Password" class=" form-control form-control-lg">
-                        <p style=color:red;><?php echo $wrong; ?></p>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" name="login" class="btn btn-block btn-primary btn-lg">Log In</button>
-                        
-                    </div>
-                    
-                </form>
-                <form action="../index.php"><div class="form-group">
-                        <button  style="background-color: #00ff00;color:white" type="submit" name="login" class="btn btn-block  btn-lg" >Go Back</button>
-                    </div></form>
+<div class="row">
+    <div class="col-xs-12 col-md-4 col-lg-3 col-lg-offset-4" style="padding:40px;">
+        <form action="admin_login.php" method="post">
+            <h3 class="text-center ">Admin Login</h3>
+            <div class="form-group">
+                
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text"  name="email" placeholder="Enter Email" class=" form-control form-control-lg">
             </div>
-        </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password"  name="password" placeholder="Password" class=" form-control form-control-lg">
+                <p style=color:red;><?php echo $wrong; ?></p>
+            </div>
+            <div class="form-group">
+                <button type="submit" name="login" class="btn btn-block btn-primary btn-lg">Log In</button>
+                
+            </div>
+            
+        </form>
+        <form action="../index.php">
+            <div class="form-group">
+                    <button  style="background-color: #00ff00;color:white" type="submit" name="login" class="btn btn-block  btn-lg" >Go Back</button>
+            </div>
+        </form>
     </div>
+
+</div>
 
         <hr>
 

@@ -76,7 +76,7 @@
 
         $add_news = mysqli_query($conn, $sql);
         if (!$add_news) {
-            die('Failed' . mysqli_error($create_cat_query));
+            die('Failed' . mysqli_error($add_news));
         }
         header("location:news.php");
         }
