@@ -1,5 +1,6 @@
 # Online News Portal in PHP & MySQL.
 
+<img src="/screenshots/Screenshot_20210210_193008.png">
 This webapp is an online platform for reading/adding news. Anyone can read the news
 and also search for particular news under a main category. Success of a news website is
 covering most possible number of news from whole world. 
